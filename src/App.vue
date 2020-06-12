@@ -30,8 +30,8 @@ export default {
     },
     postApi () {
       axios.post('http://localhost:3000/users', {
-        firstName: 'Fred',
-        lastName: 'Flintstone',
+        firstname: 'Fred',
+        lastname: 'Flintstone',
         status: 'Writing program'
       })
       .then(function (response) {
