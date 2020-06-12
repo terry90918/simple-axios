@@ -2,7 +2,8 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <button @click="callApi">Call Api</button>
+    <button @click="getApi">Get Api</button>
+    <button @click="postApi">Post Api</button>
     <div v-text="info" />
   </div>
 </template>
@@ -22,10 +23,23 @@ export default {
     }
   },
   methods: {
-    callApi () {
+    getApi () {
       axios
         .get('https://api.coindesk.com/v1/bpi/currentprice.json')
         .then(response => (this.info = response))
+    },
+    postApi () {
+      axios.post('http://localhost:3000/users', {
+        firstName: 'Fred',
+        lastName: 'Flintstone',
+        status: 'Writing program'
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
     }
   }
 }
