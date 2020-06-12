@@ -29,17 +29,18 @@ export default {
         .then(response => (this.info = response))
     },
     postApi () {
-      axios.post('http://localhost:3000/users', {
-        firstname: 'Fred',
-        lastname: 'Flintstone',
-        status: 'Writing program'
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+      axios
+        .post('http://localhost:3000/users', {
+          firstname: 'Fred',
+          lastname: 'Flintstone',
+          status: 'Writing program'
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
     }
   }
 }
