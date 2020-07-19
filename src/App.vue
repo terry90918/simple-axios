@@ -26,7 +26,9 @@ export default {
     getApi () {
       axios
         .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-        .then(response => (this.info = response))
+        .then((response) => {
+          this.info = response
+        })
     },
     postApi () {
       axios
@@ -35,11 +37,11 @@ export default {
           lastname: 'Flintstone',
           status: 'Writing program'
         })
-        .then(function (response) {
-          console.log(response);
+        .then((response) => {
+          console.log(response)
         })
-        .catch(function (error) {
-          console.log(error);
+        .catch((error) => {
+          console.log(error)
         })
     }
   }
